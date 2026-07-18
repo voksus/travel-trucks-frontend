@@ -1,0 +1,55 @@
+.hero {
+  background-image: url(/hero@1.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  min-height: calc(100vh - 72px);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding-left: 64px;
+  padding-top: 195px;
+
+  @media (min-resolution: 2dppx) {
+    background-image: url(/hero@2x.jpg);
+  }
+}
+
+.title {
+  font-family: var(--font-family);
+  font-size: 48px;
+  font-weight: 600;
+  line-height: 0.75;
+  text-align: left;
+  color: var(--white);
+  margin-bottom: 16px;
+}
+
+.subtitle {
+  font-family: var(--font-family);
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 1.5;
+  text-align: left;
+  color: var(--white);
+  margin-bottom: 40px;
+}
+
+.button {
+  background-color: var(--gray-green);
+  color: var(--white);
+  border-radius: 100px;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.5;
+  text-decoration: none;
+  padding: 16px 48px;
+  margin-bottom: 40px;
+  transition: background-color 0.2s ease-in-out;
+
+  &:hover {
+    background-color: var(--green-hover);
+  }
+}

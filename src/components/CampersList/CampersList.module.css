@@ -1,0 +1,17 @@
+.campersList {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.placeholder {
+  font-family: var(--font-family);
+  font-size: 18px;
+  color: var(--text);
+  padding: 40px 0;
+  width: 100%;
+  text-align: center;
+  border: 1px dashed var(--gray-light);
+  border-radius: 12px;
+}
