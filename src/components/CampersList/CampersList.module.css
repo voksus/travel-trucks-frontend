@@ -5,13 +5,24 @@
   width: 100%;
 }
 
-.placeholder {
-  font-family: var(--font-family);
-  font-size: 18px;
-  color: var(--text);
-  padding: 40px 0;
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
   width: 100%;
+  margin: 0;
+  padding: 0;
+  margin-bottom: 40px;
+}
+
+.listItem {
+  list-style: none;
+}
+
+.loadedAmountInfo {
+  font-size: 18px;
+  color: var(--gray);
   text-align: center;
-  border: 1px dashed var(--gray-light);
-  border-radius: 12px;
+  opacity: 0.6;
+  margin-bottom: 28px;
 }

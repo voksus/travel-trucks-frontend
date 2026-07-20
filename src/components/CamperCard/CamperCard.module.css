@@ -1,0 +1,203 @@
+.cardContainer {
+  position: relative;
+  background-color: var(--inputs);
+  border-radius: 16px;
+  padding: 24px;
+  display: flex;
+  flex-direction: row;
+  gap: 24px;
+  width: 888px;
+  text-align: left;
+}
+
+.image {
+  width: 220px;
+  height: 240px;
+  border-radius: 16px;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.idBadge {
+  position: absolute;
+  font-size: 24px;
+  font-weight: 600;
+  bottom: 16px;
+  left: 24px;
+  opacity: 0.1;
+
+  & span {
+    font-weight: 400;
+  }
+}
+
+.infoBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  width: 524px;
+  flex-shrink: 0;
+}
+
+.titleRow {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.nameWrapper {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.name {
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 1.25;
+  color: var(--main);
+  max-width: 380px;
+}
+
+.favoriteBtn {
+  display: inline-flex;
+  vertical-align: -10%;
+  margin-left: 8px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  align-items: center;
+  justify-content: center;
+}
+
+.heartIcon {
+  width: 24px;
+  height: 24px;
+  color: var(--main);
+  opacity: 0.3;
+  transition:
+    transform 0.2s ease,
+    opacity 0.2s ease,
+    color 0.2s ease;
+
+  &:hover {
+    opacity: 1;
+    transform: scale(1.1);
+  }
+}
+
+.heartIconActive {
+  color: var(--favorite);
+  fill: var(--favorite);
+  opacity: 1;
+
+  &:hover {
+    color: var(--favorite-hover);
+    fill: var(--favorite-hover);
+    transform: none;
+  }
+}
+
+.price {
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 1.25;
+  color: var(--main);
+}
+
+.ratingLocationRow {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 16px;
+}
+
+.ratingGroup,
+.locationGroup {
+  display: flex;
+  align-items: center;
+}
+
+.starIcon {
+  color: var(--rating);
+  width: 16px;
+  height: 16px;
+  margin-right: 4px;
+}
+
+.ratingText {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.5;
+  color: var(--main);
+}
+
+.mapIcon {
+  width: 16px;
+  height: 16px;
+  margin-right: 4px;
+  color: var(--main);
+}
+
+.locationText {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.5;
+  color: var(--main);
+}
+
+.description {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.5;
+  color: var(--text);
+  margin: 0;
+}
+
+.badgesList {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 18px;
+  background-color: var(--badges);
+  border-radius: 100px;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.25;
+  color: var(--main);
+  mix-blend-mode: multiply;
+}
+
+.badgeIcon {
+  width: 20px;
+  height: 20px;
+  color: var(--main);
+}
+
+.showMoreBtn {
+  display: inline-block;
+  padding: 16px 44px;
+  background-color: var(--gray-green);
+  color: var(--white);
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.5;
+  border-radius: 200px;
+  text-align: center;
+  text-decoration: none;
+  width: fit-content;
+  transition: background-color 0.2s ease;
+}
+
+.showMoreBtn:hover {
+  background-color: var(--green-hover);
+}

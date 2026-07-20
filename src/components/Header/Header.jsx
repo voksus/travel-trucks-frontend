@@ -8,15 +8,25 @@ const Header = () => {
         <img src="/travel-trucks-logo.svg" alt="TravelTrucks Logo" />
       </Link>
 
-      <nav className={styles.nav}>
+      <nav>
         <ul className={styles.navList}>
           <li>
-            <NavLink to="/" className={styles.navLink}>
+            <NavLink
+              to="/"
+              className={({ isActive }) =>
+                `${styles.navLink} ${isActive ? styles.active : ""}`
+              }
+            >
               Home
             </NavLink>
           </li>
           <li>
-            <NavLink to="/catalog" className={styles.navLink}>
+            <NavLink
+              to="/catalog"
+              className={({ isActive }) =>
+                `${styles.navLink} ${isActive ? styles.active : ""}`
+              }
+            >
               Catalog
             </NavLink>
           </li>

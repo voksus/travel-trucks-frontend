@@ -1,0 +1,512 @@
+.container {
+  padding: 40px 64px;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  text-align: left;
+  background-color: var(--white);
+  box-sizing: border-box;
+}
+
+.topSection {
+  display: flex;
+  gap: 24px;
+}
+
+.galleryColumn {
+  width: 638px;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  flex-shrink: 0;
+  margin-bottom: 52px;
+}
+
+.mainImageWrapper {
+  border: 1px solid var(--gray-light);
+  width: 638px;
+  height: 505px;
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.mainImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 16px;
+}
+
+.thumbnailsRow {
+  display: flex;
+  gap: 32px;
+  overflow-x: auto;
+  width: 638px;
+  padding-bottom: 8px;
+
+  &:-webkit-scrollbar {
+    height: 6px;
+  }
+
+  &:-webkit-scrollbar-thumb {
+    background-color: var(--gray-light);
+    border-radius: 10px;
+  }
+}
+
+.thumbnailWrapper {
+  position: relative;
+  width: 136px;
+  height: 144px;
+  border-radius: 16px;
+  overflow: hidden;
+  cursor: pointer;
+  flex-shrink: 0;
+  box-sizing: border-box;
+  transition: outline 0.2s ease;
+  outline: 1px solid var(--gray-light);
+  outline-offset: -1px;
+
+  &.active {
+    outline: 3px solid var(--gray-green);
+    outline-offset: -3px;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 16px;
+    pointer-events: none;
+    box-shadow: inset 0 0 20px 5px rgba(255, 255, 255, 0.4);
+    opacity: 0;
+    transition: opacity 0.2s ease;
+  }
+
+  &:hover::after {
+    opacity: 1;
+  }
+}
+
+.thumbnailImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.infoColumn {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.detailsBlock {
+  position: relative;
+  background-color: var(--inputs);
+  border-radius: 16px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.titleRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.name {
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 1.25;
+  color: var(--main);
+}
+
+.favoriteBtn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.heartIcon {
+  width: 24px;
+  height: 24px;
+  color: var(--main);
+  opacity: 0.3;
+  transition:
+    transform 0.2s ease,
+    opacity 0.2s ease,
+    color 0.2s ease;
+
+  &:hover {
+    opacity: 1;
+    transform: scale(1.1);
+  }
+}
+
+.heartIconActive {
+  color: var(--favorite);
+  fill: var(--favorite);
+  opacity: 1;
+
+  &:hover {
+    color: var(--favorite-hover);
+    fill: var(--favorite-hover);
+    transform: none;
+  }
+}
+
+.ratingLocationRow {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.ratingGroup,
+.locationGroup {
+  display: flex;
+  align-items: center;
+}
+
+.starIcon {
+  color: var(--rating);
+  width: 16px;
+  height: 16px;
+  margin-right: 4px;
+}
+
+.ratingText,
+.locationText {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.5;
+  color: var(--main);
+}
+
+.mapIcon {
+  width: 16px;
+  height: 16px;
+  margin-right: 4px;
+  color: var(--main);
+}
+
+.price {
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 1.25;
+  color: var(--main);
+}
+
+.description {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.5;
+  color: var(--text);
+  margin: 0;
+}
+
+.idBadge {
+  position: absolute;
+  font-size: 24px;
+  font-weight: 600;
+  bottom: 16px;
+  right: 16px;
+  opacity: 0.1;
+
+  & span {
+    font-weight: 400;
+  }
+}
+
+.blockTitle {
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--main);
+  margin-bottom: 8px;
+}
+
+.badgesList {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 8px;
+  border-bottom: 1px solid var(--gray-light);
+  padding-bottom: 24px;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 12px 18px;
+  background-color: var(--badges);
+  border-radius: 100px;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.25;
+  color: var(--main);
+  mix-blend-mode: multiply;
+}
+
+.detailsTable {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.tableRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.33;
+}
+
+.tableLabel {
+  color: var(--main);
+}
+
+.tableValue {
+  color: var(--main);
+  text-align: right;
+}
+
+.bottomSection {
+  display: flex;
+  gap: 24px;
+}
+
+.reviewsColumn {
+  width: 638px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  flex-shrink: 0;
+}
+
+.reviewsTitle {
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--main);
+}
+
+.reviewsList {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.reviewCard {
+  background-color: var(--inputs);
+  border-radius: 16px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.reviewHeader {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.avatar {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: var(--white);
+  color: var(--main);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  font-weight: 600;
+  flex-shrink: 0;
+}
+
+.reviewMeta {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.reviewerName {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--main);
+}
+
+.starsRow {
+  display: flex;
+  gap: 4px;
+}
+
+.starIconActive {
+  color: var(--rating);
+  width: 16px;
+  height: 16px;
+}
+
+.starIconInactive {
+  color: var(--gray-light);
+  width: 16px;
+  height: 16px;
+}
+
+.reviewComment {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.5;
+  color: var(--text);
+}
+
+.noReviews {
+  font-size: 16px;
+  color: var(--gray);
+}
+
+.bookingColumn {
+  border: 1px solid var(--gray-light);
+  border-radius: 16px;
+  padding: 44px;
+  margin-bottom: 8px;
+  background: transparent;
+  width: 100%;
+}
+
+.bookingForm {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  box-sizing: border-box;
+}
+
+.bookingHeader {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.bookingTitle {
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--main);
+}
+
+.bookingSubtitle {
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--gray);
+}
+
+.inputWrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.input {
+  width: 100%;
+  height: 60px;
+  background-color: var(--inputs);
+  border: 1px solid var(--inputs);
+  border-radius: 16px;
+  padding: 0 18px;
+  font-size: 16px;
+  color: var(--main);
+  outline: none;
+  transition:
+    border-color 0.2s ease,
+    background-color 0.2s ease;
+  box-sizing: border-box;
+
+  &::placeholder {
+    color: var(--gray);
+  }
+
+  &:focus {
+    border-color: var(--gray-green);
+  }
+}
+
+.floatingLabel {
+  position: absolute;
+  top: -9px;
+  left: 16px;
+  background-color: var(--inputs);
+  border-radius: 8px;
+  padding: 0 8px;
+  font-size: 12px;
+  font-weight: 400;
+  color: var(--gray);
+  pointer-events: none;
+  z-index: 10;
+}
+
+.inputError {
+  background-color: var(--error-light) !important;
+  border-color: var(--error) !important;
+  color: var(--error) !important;
+  padding-right: 48px;
+}
+
+.labelError {
+  background-color: var(--error-light) !important;
+  color: var(--error) !important;
+}
+
+.errorIcon {
+  position: absolute;
+  right: 18px;
+  top: 18px;
+  color: var(--error);
+  width: 24px;
+  height: 24px;
+  pointer-events: none;
+}
+
+.errorText {
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--error);
+  margin-top: 8px;
+  text-align: left;
+}
+
+.sendButton {
+  width: 100%;
+  background-color: var(--gray-green);
+  color: var(--white);
+  padding: 16px;
+  border-radius: 100px;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.5;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+
+  &:hover {
+    background-color: var(--green-hover);
+  }
+}
+
+.notFound {
+  padding: 100px 0;
+  font-size: 24px;
+  text-align: center;
+  color: var(--gray);
+}

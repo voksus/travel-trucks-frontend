@@ -8,7 +8,6 @@ const Hero = () => {
       <h2 className={styles.subtitle}>
         You can find everything you want in our catalog
       </h2>
-      {/* Кнопка як посилання на каталог */}
       <Link to="/catalog" className={styles.button}>
         View Now
       </Link>

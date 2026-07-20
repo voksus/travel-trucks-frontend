@@ -1,0 +1,88 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+
+  width: 100%;
+  min-height: calc(100vh - 108px);
+
+  background-color: var(--inputs);
+  border-radius: 16px;
+  padding: 40px 24px;
+  box-sizing: border-box;
+}
+
+.image {
+  width: auto;
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 90px;
+  object-fit: contain;
+}
+
+.title {
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 1.25;
+  color: var(--main);
+  margin: 0 0 16px 0;
+}
+
+.description {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.5;
+  color: var(--text);
+  max-width: 480px;
+  margin: 0 0 32px 0;
+}
+
+.buttonsGroup {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+}
+
+.clearBtn {
+  background-color: transparent;
+  color: var(--main);
+  border: 1px solid var(--gray-light);
+  padding: 16px 38px;
+  border-radius: 100px;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  cursor: pointer;
+  transition:
+    border-color 0.2s ease-in-out,
+    color 0.2s ease-in-out;
+}
+
+.clearBtn:hover {
+  border-color: var(--main);
+}
+
+.viewAllBtn {
+  background-color: var(--gray-green);
+  color: var(--white);
+  border: none;
+  padding: 16px 30px;
+  border-radius: 100px;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.5;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.viewAllBtn:hover {
+  background-color: var(--green-hover);
+}

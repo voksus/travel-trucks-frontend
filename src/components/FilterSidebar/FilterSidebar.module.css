@@ -1,17 +1,16 @@
 .filterSidebar {
   position: sticky;
-  top: 32px;
+  top: 96px;
   width: 360px;
   flex-shrink: 0;
   align-self: flex-start;
-  margin-bottom: 24px;
   text-align: left;
 
   background-color: var(--inputs);
   border-radius: 20px;
   padding: 24px;
 
-  max-height: calc(100vh - 64px);
+  max-height: calc(100vh - 108px);
   overflow-y: auto;
 
   scrollbar-width: thin;
@@ -30,7 +29,6 @@
 
 .label {
   display: block;
-  font-family: var(--font-family);
   font-size: 16px;
   font-weight: 400;
   line-height: 1.5;
@@ -59,7 +57,6 @@
   border: none;
   background-color: var(--white);
   border-radius: 12px;
-  font-family: var(--font-family);
   font-size: 16px;
   line-height: 1.25;
   color: var(--main);
@@ -75,7 +72,6 @@
 }
 
 .filtersTitle {
-  font-family: var(--font-family);
   font-size: 20px;
   font-weight: 600;
   line-height: 1.2;
@@ -98,7 +94,6 @@
   align-items: center;
   gap: 12px;
   cursor: pointer;
-  font-family: var(--font-family);
   font-size: 16px;
   font-weight: 500;
   line-height: 1.25;
@@ -202,5 +197,79 @@
 
   &:hover {
     border-color: var(--main);
+  }
+}
+
+.checkboxList {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 12px;
+
+  .checkboxLabel {
+    display: flex;
+    align-items: center;
+    padding: 10px 12px;
+    border: 1px solid var(--gray-light);
+    border-radius: 12px;
+    background-color: transparent;
+    cursor: pointer;
+    user-select: none;
+    transition:
+      border-color 0.1s ease-in-out,
+      background-color 0.1s ease-in-out,
+      color 0.1s ease-in-out;
+
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 1.25;
+    color: var(--main);
+
+    &:hover {
+      border: 1px solid var(--green-hover);
+      background-color: color-mix(in srgb, var(--gray-green) 20%, transparent);
+    }
+
+    &.checked {
+      background-color: var(--gray-green);
+      border-color: var(--gray-green);
+      color: var(--white);
+
+      .checkboxIcon {
+        color: var(--white);
+      }
+
+      &:hover {
+        background-color: var(--gray-green);
+        border: 1px solid var(--green-hover);
+      }
+    }
+  }
+
+  .checkboxInput {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    border: 0;
+    padding: 0;
+    white-space: nowrap;
+    clip-path: inset(100%);
+    clip: rect(0 0 0 0);
+    overflow: hidden;
+  }
+
+  .checkboxText {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .checkboxIcon {
+    font-size: 20px;
+    color: var(--text);
+    transition: color 0.1s ease-in-out;
   }
 }
