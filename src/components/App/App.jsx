@@ -41,7 +41,7 @@ function App() {
         <Route path="/" element={<Hero />} />
         <Route path="/catalog" element={<Catalog />} />
         <Route path="/catalog/:id" element={<CamperDetails />} />
-        <Route path="*" element={<Page404 />} />
+        <Route path="*" element={<Page404 allowBack={true} />} />
       </Routes>
     </>
   );

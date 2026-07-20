@@ -5,6 +5,7 @@ import { selectFavorites, toggleFavorite } from "../../redux/favorites/slice";
 import api from "../../services/api";
 import StatusModal from "../StatusModal/StatusModal";
 
+import Page404 from "../Page404/Page404";
 import CamperGallery from "./components/CamperGallery";
 import CamperInfo from "./components/CamperInfo";
 import CamperFeatures from "./components/CamperFeatures";
@@ -44,8 +45,8 @@ const CamperDetails = () => {
     return <StatusModal type="camper details" />;
   }
 
-  if (!camper) {
-    return <div className={styles.notFound}>Camper not found</div>;
+  if (!camper || typeof camper !== "object" || !camper.id) {
+    return <Page404 />;
   }
 
   return (

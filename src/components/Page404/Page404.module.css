@@ -34,10 +34,15 @@
   }
 }
 
+.buttonWrapper {
+  display: flex;
+  gap: 20px;
+}
+
 .button {
   background-color: var(--gray-green);
   color: var(--white);
-  padding: 16px 64px;
+  padding: 16px 32px;
   border-radius: 100px;
   font-size: 16px;
   font-weight: 500;
@@ -46,5 +51,21 @@
 
   &:hover {
     background-color: var(--green-hover);
+  }
+}
+
+.simpleButton {
+  composes: button;
+
+  background-color: var(--error-light);
+  color: var(--error);
+  border: 1px solid var(--error);
+  transition:
+    background-color 0.2s ease-in-out,
+    color 0.2s ease-in-out;
+
+  &:hover {
+    background-color: var(--error);
+    color: var(--white);
   }
 }

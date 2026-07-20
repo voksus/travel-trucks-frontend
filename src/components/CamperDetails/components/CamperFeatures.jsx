@@ -32,6 +32,7 @@ const CamperFeatures = ({ camper }) => {
   });
 
   const dataConvert = (value) => {
+    if (!value) return "";
     return value
       .replace(/(\d+(?:\.\d+)?)l/gi, "$1 L")
       .replace(/(\d+(?:\.\d+)?)m/gi, "$1 m")
